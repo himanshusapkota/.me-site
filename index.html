@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himanshu's Homepage</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+
+    background:#000080 url("https://www.transparenttextures.com/patterns/stardust.png");
+
+    font-family:"Comic Sans MS", cursive;
+}
+
+
+.crt{
+    position:relative;
+    padding:35px;
+    border-radius:25px;
+
+    background:#181818;
+
+    box-shadow:
+        inset 0 0 40px rgba(255,255,255,.05),
+        inset 0 0 120px rgba(0,0,0,.9),
+        0 0 60px rgba(0,0,0,.9);
+}
+
+.window{
+    position:relative;
+
+    width:650px;
+
+    background:#c0c0c0;
+
+    border:4px ridge white;
+
+    padding:20px;
+
+    text-align:center;
+
+    color:#001b44;
+
+    box-shadow:
+        0 0 15px rgba(0,150,255,.4);
+
+    text-shadow:
+        0 0 2px rgba(0,120,255,.5);
+
+    filter:blur(.35px) saturate(.85);
+}
+
+
+.window::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.02) 0px,
+        rgba(255,255,255,.02) 2px,
+        rgba(0,0,0,.08) 3px,
+        rgba(0,0,0,.08) 4px
+    );
+}
+
+
+.window::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    background:rgba(0,120,255,.08);
+    mix-blend-mode:screen;
+}
+
+
+@keyframes flicker{
+    0%{opacity:.98;}
+    50%{opacity:1;}
+    100%{opacity:.99;}
+}
+
+.window{
+    animation:flicker .18s infinite;
+}
+
+marquee{
+    background:navy;
+    color:yellow;
+    font-weight:bold;
+    padding:8px;
+    margin-bottom:20px;
+}
+
+h1{
+    color:#002b8f;
+    margin-bottom:18px;
+}
+
+p{
+    margin:14px 0;
+    line-height:1.6;
+    font-size:18px;
+}
+
+a{
+    display:inline-block;
+
+    margin-top:8px;
+
+    padding:8px 18px;
+
+    background:yellow;
+
+    color:blue;
+
+    text-decoration:none;
+
+    border:3px outset white;
+
+    font-weight:bold;
+}
+
+a:hover{
+    background:lime;
+}
+
+hr{
+    margin:20px 0;
+}
+
+.buttons{
+    margin:20px 0;
+}
+
+.buttons img{
+    margin:3px;
+}
+
+.counter{
+    display:inline-block;
+
+    background:black;
+
+    color:lime;
+
+    padding:6px 14px;
+
+    border:2px inset gray;
+
+    font-family:monospace;
+}
+
+.guestbook{
+    margin-top:18px;
+    color:blue;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="crt">
+
+<div class="window">
+
+<marquee scrollamount="6">
+★ Welcome to Himanshu's Cool Little Corner of the Internet ★
+</marquee>
+
+<h1>Hi!! I'm Himanshu :D</h1>
+
+<p>
+Just a Random Student from Nepal who is dreaming big.
+</p>
+
+<p>
+Let's Code Together.
+</p>
+
+<p>
+Mail me, I don't have other contacts.
+</p>
+
+<a href="mailto:himanshuspkt@gmail.com">
+ Send Mail
+</a>
+
+<br><br>
+
+<a href="https://www.instagram.com/_himanshuuuu7/" target="_blank">
+Instagram (You can message me here if you want)
+</a>
+
+<hr>
+
+<div class="buttons">
+<img src="https://cyber.dabamos.de/88x31/html.gif" alt="HTML">
+<img src="https://cyber.dabamos.de/88x31/notepad.gif" alt="Notepad">
+<img src="https://cyber.dabamos.de/88x31/netscape.gif" alt="Netscape">
+</div>
+
+<p class="counter">
+Visitors: 000042
+</p>
+
+<p class="guestbook">
+>>> Sign My Guestbook <<< <br>
+(not actually working lol)
+</p>
+
+<marquee direction="right" scrollamount="4">
+Thanks for visiting • Have a nice day • Come back soon •
+</marquee>
+
+</div>
+
+</div>
+
+</body>
+</html>
