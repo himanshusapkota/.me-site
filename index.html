@@ -1,242 +1,577 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
 <title>Hellooooooooooooooooooooooooooooooooooo</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    overflow:hidden;
+    body {
+        min-height: 100vh;
 
-    background:#000080 url("https://www.transparenttextures.com/patterns/stardust.png");
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    font-family:"Comic Sans MS", cursive;
-}
+        padding: 20px;
+
+        overflow-x: hidden;
+
+        background:
+            #000080 url("https://www.transparenttextures.com/patterns/stardust.png");
+
+        font-family: "Comic Sans MS", cursive;
+    }
+
+  
+
+    .crt {
+        position: relative;
+
+        width: min(720px, 100%);
+
+        padding: 35px;
+
+        border-radius: 25px;
+
+        background: #202020;
+
+        box-shadow:
+            inset 0 0 40px rgba(255, 255, 255, 0.05),
+            inset 0 0 120px rgba(0, 0, 0, 0.9),
+            0 0 60px rgba(0, 0, 0, 0.9);
+    }
+
+  
+  
+
+    .window {
+        position: relative;
+
+        width: 100%;
+
+        background: #c0c0c0;
+
+        border: 4px ridge #ffffff;
+
+        padding: 20px;
+
+        text-align: center;
+
+        color: #000040;
+
+        box-shadow:
+            0 0 15px rgba(0, 255, 255, 0.35);
+
+        text-shadow:
+            0 0 2px rgba(0, 120, 255, 0.5);
+
+        filter: blur(0.35px) saturate(0.85);
+
+        animation: flicker 0.18s infinite;
+
+        overflow: hidden;
+    }
+
+  
+
+    .window::before {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        z-index: 10;
+
+        background:
+            repeating-linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.02) 0px,
+                rgba(255, 255, 255, 0.02) 2px,
+                rgba(0, 0, 0, 0.08) 3px,
+                rgba(0, 0, 0, 0.08) 4px
+            );
+    }
 
 
-.crt{
-    position:relative;
-    padding:35px;
-    border-radius:25px;
+    .window::after {
+        content: "";
 
-    background:#181818;
+        position: absolute;
 
-    box-shadow:
-        inset 0 0 40px rgba(255,255,255,.05),
-        inset 0 0 120px rgba(0,0,0,.9),
-        0 0 60px rgba(0,0,0,.9);
-}
+        inset: 0;
 
-.window{
-    position:relative;
+        pointer-events: none;
 
-    width:650px;
+        z-index: 9;
 
-    background:#c0c0c0;
+        background: rgba(0, 120, 255, 0.06);
 
-    border:4px ridge white;
+        mix-blend-mode: screen;
+    }
 
-    padding:20px;
+   
 
-    text-align:center;
+    @keyframes flicker {
 
-    color:#001b44;
+        0% {
+            opacity: 0.98;
+        }
 
-    box-shadow:
-        0 0 15px rgba(0,150,255,.4);
+        50% {
+            opacity: 1;
+        }
 
-    text-shadow:
-        0 0 2px rgba(0,120,255,.5);
+        100% {
+            opacity: 0.99;
+        }
+    }
 
-    filter:blur(.35px) saturate(.85);
-}
+    
+
+    marquee {
+        display: block;
+
+        background: #000080;
+
+        color: #00ffff;
+
+        font-weight: bold;
+
+        padding: 8px;
+
+        margin-bottom: 20px;
+
+        border: 2px inset #ffffff;
+
+        position: relative;
+
+        z-index: 20;
+
+        text-shadow:
+            1px 1px #000000;
+    }
+
+    
+
+    h1 {
+        color: #000080;
+
+        margin-bottom: 18px;
+
+        font-size: clamp(26px, 6vw, 42px);
+
+        line-height: 1.2;
+
+        word-break: break-word;
+
+        position: relative;
+
+        z-index: 20;
+
+        text-shadow:
+            2px 2px #808080;
+    }
 
 
-.window::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
+    p {
+        margin: 14px 0;
 
-    background:
-    repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,.02) 0px,
-        rgba(255,255,255,.02) 2px,
-        rgba(0,0,0,.08) 3px,
-        rgba(0,0,0,.08) 4px
-    );
-}
+        line-height: 1.6;
+
+        font-size: clamp(16px, 3vw, 18px);
+
+        position: relative;
+
+        z-index: 20;
+    }
 
 
-.window::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
+    a {
+        display: inline-block;
 
-    background:rgba(0,120,255,.08);
-    mix-blend-mode:screen;
-}
+        max-width: 100%;
 
+        margin-top: 8px;
 
-@keyframes flicker{
-    0%{opacity:.98;}
-    50%{opacity:1;}
-    100%{opacity:.99;}
-}
+        padding: 8px 18px;
 
-.window{
-    animation:flicker .18s infinite;
-}
+        background: #d0d0d0;
 
-marquee{
-    background:navy;
-    color:yellow;
-    font-weight:bold;
-    padding:8px;
-    margin-bottom:20px;
-}
+        color: #000080;
 
-h1{
-    color:#002b8f;
-    margin-bottom:18px;
-}
+        text-decoration: none;
 
-p{
-    margin:14px 0;
-    line-height:1.6;
-    font-size:18px;
-}
+        border: 3px outset #ffffff;
 
-a{
-    display:inline-block;
+        font-weight: bold;
 
-    margin-top:8px;
+        position: relative;
 
-    padding:8px 18px;
+        z-index: 20;
 
-    background:yellow;
+        overflow-wrap: anywhere;
 
-    color:blue;
+        box-shadow:
+            1px 1px 0 #000000;
+    }
 
-    text-decoration:none;
+    a:hover {
+        background: #00ffff;
 
-    border:3px outset white;
+        color: #000080;
 
-    font-weight:bold;
-}
+        border-color: #ffffff;
+    }
 
-a:hover{
-    background:lime;
-}
+    a:active {
+        border-style: inset;
 
-hr{
-    margin:20px 0;
-}
+        box-shadow: none;
+    }
 
-.buttons{
-    margin:20px 0;
-}
+   
 
-.buttons img{
-    margin:3px;
-}
+    hr {
+        margin: 20px 0;
 
-.counter{
-    display:inline-block;
+        border: 0;
 
-    background:black;
+        border-top: 3px ridge #ffffff;
+    }
 
-    color:lime;
+    
 
-    padding:6px 14px;
+    .buttons {
+        margin: 20px 0;
 
-    border:2px inset gray;
+        display: flex;
 
-    font-family:monospace;
-}
+        justify-content: center;
 
-.guestbook{
-    margin-top:18px;
-    color:blue;
-    font-weight:bold;
-}
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 5px;
+
+        position: relative;
+
+        z-index: 20;
+    }
+
+    .buttons img {
+        width: 88px;
+
+        max-width: 100%;
+
+        height: 31px;
+
+        image-rendering: pixelated;
+    }
+
+   
+
+    .counter {
+        display: inline-block;
+
+        background: #000000;
+
+        color: #00ff00;
+
+        padding: 6px 14px;
+
+        border: 2px inset #808080;
+
+        font-family: monospace;
+
+        font-size: 15px;
+
+        letter-spacing: 1px;
+
+        position: relative;
+
+        z-index: 20;
+
+        text-shadow:
+            0 0 4px #00ff00;
+    }
+
+   
+
+    .guestbook {
+        margin-top: 18px;
+
+        color: #000080;
+
+        font-weight: bold;
+
+        position: relative;
+
+        z-index: 20;
+    }
+
+  
+
+    @media (max-width: 700px) {
+
+        body {
+            padding: 12px;
+        }
+
+        .crt {
+            padding: 20px;
+
+            border-radius: 18px;
+        }
+
+        .window {
+            padding: 15px;
+        }
+    }
+
+    
+
+    @media (max-width: 480px) {
+
+        body {
+            padding: 8px;
+
+            align-items: flex-start;
+        }
+
+        .crt {
+            width: 100%;
+
+            padding: 10px;
+
+            margin: 8px 0;
+
+            border-radius: 12px;
+        }
+
+        .window {
+            padding: 12px;
+
+            border-width: 3px;
+        }
+
+        marquee {
+            font-size: 13px;
+
+            padding: 6px;
+
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 26px;
+
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 15px;
+
+            line-height: 1.5;
+        }
+
+        a {
+            display: block;
+
+            width: 100%;
+
+            margin: 8px auto;
+
+            padding: 10px;
+
+            font-size: 15px;
+        }
+
+        .buttons {
+            gap: 4px;
+        }
+
+        .buttons img {
+            width: 80px;
+
+            height: auto;
+        }
+
+        .counter {
+            font-size: 13px;
+
+            padding: 5px 10px;
+        }
+
+        .guestbook {
+            font-size: 14px;
+        }
+    }
+
+  
+
+    @media (max-width: 340px) {
+
+        .crt {
+            padding: 6px;
+        }
+
+        .window {
+            padding: 9px;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        .buttons img {
+            width: 70px;
+        }
+    }
 </style>
+```
 
 </head>
 
 <body>
 
+```
 <div class="crt">
 
-<div class="window">
+    <div class="window">
 
-<marquee scrollamount="6">
-★ Welcome to Himanshu's Cool Little Corner of the Internet ★
-</marquee>
+     
 
-<h1>Hi!! I'm Himanshu :D</h1>
+        <marquee scrollamount="6">
+            ★ WELCOME TO HIMANSHU'S LITTLE CORNER OF THE INTERNET ★
+        </marquee>
 
-<p>
-Just a Random Student from Nepal who is dreaming big.
-</p>
 
-<p>
-Let's Code Together.
-</p>
 
-<p>
-Mail me, I don't have other contacts.
-    if the button is not working then the mail is himanshuspkt@gmail.com
-</p>
+        <h1>
+            Hi!! I'm Himanshu :D
+        </h1>
 
-<a href="mailto:himanshuspkt@gmail.com">
- Send Mail
-</a>
 
-<br><br>
+        <p>
+            Just a Random Student from Nepal who is dreaming big.
+        </p>
 
-<a href="https://www.instagram.com/_himanshuuuu7/" target="_blank">
-Instagram (You can message me here if you want)
-</a>
 
-<hr>
+        <p>
+            Let's Code Together.
+        </p>
 
-<div class="buttons">
-<img src="https://cyber.dabamos.de/88x31/html.gif" alt="HTML">
-<img src="https://cyber.dabamos.de/88x31/notepad.gif" alt="Notepad">
-<img src="https://cyber.dabamos.de/88x31/netscape.gif" alt="Netscape">
+
+        <p>
+            Mail me, I don't have other contacts.<br>
+
+            If the button is not working, my mail is
+            himanshuspkt@gmail.com
+        </p>
+
+
+        <!-- EMAIL -->
+
+        <a href="mailto:himanshuspkt@gmail.com">
+            Send Mail
+        </a>
+
+
+        <br>
+
+
+    
+
+        <a
+            href="https://www.instagram.com/_himanshuuuu7/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram
+            (You can message me here if you want)
+        </a>
+
+
+        <hr>
+
+
+   
+
+        <div class="buttons">
+
+            <img
+                src="https://cyber.dabamos.de/88x31/html.gif"
+                alt="HTML"
+            >
+
+            <img
+                src="https://cyber.dabamos.de/88x31/notepad.gif"
+                alt="Notepad"
+            >
+
+            <img
+                src="https://cyber.dabamos.de/88x31/netscape.gif"
+                alt="Netscape"
+            >
+
+        </div>
+
+
+      
+
+        <p class="counter">
+            Visitors: 000042
+        </p>
+
+
+    
+
+        <p class="guestbook">
+
+            Huh Wssup? &lt;&lt;&lt;
+
+            <br>
+
+            Touch Some Grasss!!
+
+        </p>
+
+
+
+        <marquee
+            direction="right"
+            scrollamount="4"
+        >
+            ★ BEST VIEWED IN NETSCAPE ★
+            &nbsp;&nbsp;&nbsp;
+
+            ★ MADE WITH HTML ★
+            &nbsp;&nbsp;&nbsp;
+
+            ★ LET'S CODE TOGETHER ★
+
+        </marquee>
+
+    </div>
+
 </div>
-
-<p class="counter">
-Visitors: 000042
-</p>
-
-<p class="guestbook">
-Huh Wssup?  <<< <br>
-    Touch Some Grasss!!
-
-</p>
-
-<marquee direction="right" scrollamount="4">
-Hopee youu likedd thissss<3 Lets Code together....................
-</marquee>
-
-</div>
-
-</div>
+```
 
 </body>
+
 </html>
